@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="hr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content=" width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script>
+		function hit() {
+			var a = (document.forms['my']['amount'].value * 7.53450).toFixed(2);
+			if(isNaN(a)) { alert ('Molim da upišete broj!'); }
+			document.getElementById('end').innerHTML = a + ' kuna';
+		}
+		function tap() {
+			var a = (document.forms['my']['amount'].value / 7.53450).toFixed(2);
+			if(isNaN(a)) { alert ('Molim da upišete broj!'); }
+			document.getElementById('end').innerHTML = a + ' eura';
+		}
+	</script>
+	<style>
+		body {
+			width:100%;
+			magin:0;
+			padding:0;
+		}
+		.container {
+			margin:5% auto;
+			width:300px;
+			}
+		#end {	
+			font-size:20px;
+			color:red;
+			}
+	</style>
+	</head>
+	<body>
+		<title>Kuna<-->Euro</title>
+			<div class="container">
+				<h2>Kalkulator</h2>
+				<p>U polje Iznos upišete iznos Eura ili Kuna i odabirom gumba Kuna dobijete izračun iznosa u kunama, a odabirom gumba Euro dobijete iznos preračunat u eure. Lipe ili Cente odvajati točkom ne zarezom.</p>
+					<form name="my" id="my">
+						<label for="amount">Iznos: </label>
+						<input type="text" name="amount" id="amount" value="" autofocus><br><br>
+						<input type="button" onclick="hit()" value="Kuna">
+						<input type="button" onclick="tap()" value="Euro">
+					</form>
+					
+				<p id="end"></p>
+			</div>
+	</body>
